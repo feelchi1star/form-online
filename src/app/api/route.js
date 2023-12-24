@@ -64,6 +64,18 @@ export async function POST(req) {
 
     const { email, fullName, matricNumber } = data;
 
+    if (
+      await userSchema.findOne({ matricNumber: matricNumber.toLowerCase() })
+    ) {
+      return resObj(
+        {
+          message:
+            "This Matriculation Number has already been verified. If you think this is a mistake, chat us on whatsapp",
+        },
+        409
+      );
+    }
+
     const newUser = await userSchema.create({
       email,
       matricNumber: matricNumber.toLowerCase(),
