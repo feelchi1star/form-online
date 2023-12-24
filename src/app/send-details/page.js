@@ -42,15 +42,13 @@ export default function Details() {
         msg: await response.message,
         sta: true,
       });
+      router.push("/");
     } catch (error) {
-      console.log(error);
       // Handle errors
       Alert.current.openModal({
         msg: error.response.data.message,
         sta: false,
       });
-    } finally {
-      router.push("/");
     }
   };
 
