@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
   },
   matricNumber: {
     type: String,
+    unique: [true, "Sorry!! This matric number has been verified"],
     required: [true, "Please provide your matric number"],
   },
   tokenId: {

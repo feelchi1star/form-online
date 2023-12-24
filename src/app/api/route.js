@@ -66,7 +66,7 @@ export async function POST(req) {
 
     const newUser = await userSchema.create({
       email,
-      matricNumber,
+      matricNumber: matricNumber.toLowerCase(),
       name: fullName,
       tokenId: token._id,
     });

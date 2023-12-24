@@ -42,7 +42,9 @@ export default function Details() {
         msg: await response.message,
         sta: true,
       });
-      router.push("/");
+      setTimeout(() => {
+        router.push("/");
+      }, 3000);
     } catch (error) {
       // Handle errors
       Alert.current.openModal({
