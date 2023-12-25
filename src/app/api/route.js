@@ -76,6 +76,16 @@ export async function POST(req) {
       );
     }
 
+    if (matricNumber.endsWith("7")) {
+      return resObj(
+        {
+          message:
+            "You are not a member of group 7. Note: Group 7 members matric numbers ends with 7",
+        },
+        403
+      );
+    }
+
     const newUser = await userSchema.create({
       email,
       matricNumber: matricNumber.toLowerCase(),
