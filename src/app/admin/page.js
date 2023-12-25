@@ -30,10 +30,10 @@ export default async function ADMIN({ searchParams: { password } }) {
 
       <div className="border p-4 rounded-lg">
         <h1 className="font-bold text-xl">
-          Paid Group Members: {data?.userLength + 10}+
+          Paid Group Members: {data?.userLength}+
         </h1>
 
-        <ul className="px-1 overflow-y-auto h-96">
+        <ul className="px-1 overflow-y-auto max-h-screen">
           {data?.user?.map((e, idx) => {
             return (
               <li
