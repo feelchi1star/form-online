@@ -76,7 +76,7 @@ export async function POST(req) {
       );
     }
 
-    if (matricNumber.endsWith("7")) {
+    if (!matricNumber.endsWith("7")) {
       return resObj(
         {
           message:
