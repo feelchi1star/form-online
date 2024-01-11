@@ -18,7 +18,7 @@ export async function GET(request) {
   try {
     await connectToDatabase();
     const token = await tokenSchema.find({ used: false }).limit(10);
-    const user = await userSchema.find({});
+    const user = await userSchema.find({}).sort({ matricNumber: 1 });
     return Response.json({
       length: await tokenSchema.countDocuments({ used: false }),
       token,
