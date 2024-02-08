@@ -13,7 +13,7 @@ const ListtItem = ({ e }) => {
     <li
       onClick={() => {
         navigator.clipboard
-          .writeText(e.matricNumber.toUpperCase())
+          .writeText(e.email.toLowerCase())
           .then(() => {
             setCopied(true);
           })
